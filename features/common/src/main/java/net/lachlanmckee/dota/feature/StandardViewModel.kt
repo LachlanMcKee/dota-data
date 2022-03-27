@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import net.lachlanmckee.dota.feature.model.Navigation
 
-abstract class StandardViewModel<STATE, EVENT> : ViewModel(), BookmarkViewModel<STATE, EVENT> {
+abstract class StandardViewModel<STATE, EVENT> : ViewModel(), DotaViewModel<STATE, EVENT> {
   private val navigationSharedFlow = MutableSharedFlow<Navigation>()
 
   abstract val initialState: STATE

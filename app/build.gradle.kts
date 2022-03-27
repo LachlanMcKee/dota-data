@@ -1,5 +1,5 @@
 plugins {
-  id("net.lachlanmckee.bookmark.app")
+  id("net.lachlanmckee.dota.app")
   id("dagger.hilt.android.plugin")
   id("shot")
 }
@@ -13,7 +13,7 @@ moduleSetup {
 
 android {
   defaultConfig {
-    applicationId = "net.lachlanmckee.bookmark"
+    applicationId = "net.lachlanmckee.dota"
     versionCode = System.getenv("BITRISE_BUILD_NUMBER")?.toIntOrNull() ?: 1
     versionName = "0.0.1"
   }

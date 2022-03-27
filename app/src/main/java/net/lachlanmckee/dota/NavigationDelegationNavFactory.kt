@@ -22,7 +22,7 @@ import androidx.navigation.*
 import com.google.accompanist.navigation.animation.composable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
-import net.lachlanmckee.dota.feature.BookmarkViewModel
+import net.lachlanmckee.dota.feature.DotaViewModel
 import net.lachlanmckee.dota.feature.NavigationDelegationNavFactory
 import net.lachlanmckee.dota.feature.model.Navigation
 import javax.inject.Inject
@@ -38,7 +38,7 @@ class NavigationDelegationNavFactoryImpl @Inject constructor() : NavigationDeleg
     arguments: List<NamedNavArgument>,
     deepLinks: List<NavDeepLink>,
     content: @Composable VM.(NavBackStackEntry) -> Unit
-  ) where VM : ViewModel, VM : BookmarkViewModel<*, *> {
+  ) where VM : ViewModel, VM : DotaViewModel<*, *> {
 
     builder.composable(
       route = route,

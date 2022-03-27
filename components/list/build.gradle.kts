@@ -1,5 +1,5 @@
 plugins {
-  id("net.lachlanmckee.bookmark.library")
+  id("net.lachlanmckee.dota.library")
 }
 
 moduleSetup {

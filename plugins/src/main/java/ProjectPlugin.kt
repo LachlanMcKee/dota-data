@@ -42,7 +42,7 @@ internal abstract class ProjectPlugin : Plugin<Project> {
         applyAndroid(moduleConfiguration)
 
         defaultConfig {
-          testApplicationId = "net.lachlanmckee.bookmark"
+          testApplicationId = "net.lachlanmckee.dota"
         }
 
         if (moduleConfiguration.composeEnabled) {
@@ -73,9 +73,9 @@ internal abstract class ProjectPlugin : Plugin<Project> {
 
       testInstrumentationRunner =
         if (moduleConfiguration.useHiltWithinAndroidTest) {
-          "net.lachlanmckee.bookmark.testing.HiltBookmarkTestRunner"
+          "net.lachlanmckee.dota.testing.HiltDotaTestRunner"
         } else {
-          "net.lachlanmckee.bookmark.testing.BookmarkTestRunner"
+          "net.lachlanmckee.dota.testing.DotaTestRunner"
         }
 
       testOptions {

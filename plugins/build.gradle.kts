@@ -27,12 +27,12 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    create("net.lachlanmckee.bookmark.app") {
-      id = "net.lachlanmckee.bookmark.app"
+    create("net.lachlanmckee.dota.app") {
+      id = "net.lachlanmckee.dota.app"
       implementationClass = "AppProjectPlugin"
     }
-    create("net.lachlanmckee.bookmark.library") {
-      id = "net.lachlanmckee.bookmark.library"
+    create("net.lachlanmckee.dota.library") {
+      id = "net.lachlanmckee.dota.library"
       implementationClass = "LibraryProjectPlugin"
     }
   }

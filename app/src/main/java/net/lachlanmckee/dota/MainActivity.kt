@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     setContent {
       MaterialTheme {
-        BookmarkApp()
+        DotaDataApp()
       }
     }
   }
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun BookmarkApp() {
+fun DotaDataApp() {
   val context = LocalContext.current
   val navController = rememberAnimatedNavController()
   AnimatedNavHost(navController, startDestination = "home") {

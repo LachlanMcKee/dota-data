@@ -17,7 +17,7 @@ interface NavigationDelegationNavFactory {
     arguments: List<NamedNavArgument> = emptyList(),
     deepLinks: List<NavDeepLink> = emptyList(),
     content: @Composable VM.(NavBackStackEntry) -> Unit
-  ) where VM : ViewModel, VM : BookmarkViewModel<*, *>
+  ) where VM : ViewModel, VM : DotaViewModel<*, *>
 }
 
 inline fun <reified VM> NavigationDelegationNavFactory.create(
@@ -27,7 +27,7 @@ inline fun <reified VM> NavigationDelegationNavFactory.create(
   arguments: List<NamedNavArgument> = emptyList(),
   deepLinks: List<NavDeepLink> = emptyList(),
   noinline content: @Composable VM.(NavBackStackEntry) -> Unit
-) where VM : ViewModel, VM : BookmarkViewModel<*, *> {
+) where VM : ViewModel, VM : DotaViewModel<*, *> {
   create(
     viewModelClass = VM::class.java,
     builder = builder,
