@@ -2,10 +2,7 @@ package net.lachlanmckee.dota.testing
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
-import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performImeAction
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import net.lachlanmckee.dota.MainActivity
@@ -23,23 +20,10 @@ class MainActivityTest {
     .around(composeRule)
 
   @Test
-  fun verifyNavigation() {
+  fun verifyHomeScreen() {
     with(composeRule) {
       // Home
-      onNodeWithText("Bookmarks").assertIsDisplayed()
-      onNodeWithTag("Search navigation").performClick()
-
-      // Search
-      onNodeWithText("Bookmark Search").assertIsDisplayed()
-      onNodeWithTag("SearchText").performImeAction() // Close the keyboard
-      onNodeWithTag("Settings navigation").performClick()
-
-      // Settings
-      onNodeWithText("Settings").assertIsDisplayed()
-      onNodeWithTag("Home navigation").performClick()
-
-      // Home
-      onNodeWithText("Bookmarks").assertIsDisplayed()
+      onNodeWithText("Dota Data").assertIsDisplayed()
     }
   }
 }
