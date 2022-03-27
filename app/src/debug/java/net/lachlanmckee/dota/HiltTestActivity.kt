@@ -1,0 +1,7 @@
+package net.lachlanmckee.dota
+
+import androidx.appcompat.app.AppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class HiltTestActivity : AppCompatActivity()
