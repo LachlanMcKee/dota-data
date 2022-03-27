@@ -1,18 +1,16 @@
 package net.lachlanmckee.dota.feature.home.ui
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Divider
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import net.lachlanmckee.dota.components.chip.layout.ChipFlowRowPlaceholder
+import androidx.compose.ui.graphics.Color
 import net.lachlanmckee.dota.feature.home.HomeViewModel
 
 @Composable
@@ -24,6 +22,14 @@ internal fun HomeScreen(
     events(HomeViewModel.Event.Back)
   }
 
+  HomeScreenContent(state, events)
+}
+
+@Composable
+internal fun HomeScreenContent(
+  state: HomeViewModel.State,
+  events: (HomeViewModel.Event) -> Unit
+) {
   Scaffold(
     topBar = {
       TopAppBar(
@@ -31,31 +37,9 @@ internal fun HomeScreen(
       )
     },
     content = { innerPadding ->
-      Box(modifier = Modifier.padding(innerPadding)) {
-        HomeContent(
-          state = state
-        )
+      Box(modifier = Modifier.fillMaxSize().padding(innerPadding).background(Color.Gray)) {
+        Text("Loading State")
       }
     }
   )
-}
-
-@Composable
-private fun HomeContent(
-  state: HomeViewModel.State
-) {
-  when (state) {
-    is HomeViewModel.State.Loading -> {
-      LazyColumn {
-        items(count = 3) {
-          Box(modifier = Modifier.fillMaxSize().padding(8.dp)) {
-            ChipFlowRowPlaceholder(
-              count = 3
-            )
-          }
-          Divider()
-        }
-      }
-    }
-  }
 }

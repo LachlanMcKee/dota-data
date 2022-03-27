@@ -1,12 +1,13 @@
 pluginManagement {
   repositories {
+    maven("https://oss.sonatype.org/content/repositories/snapshots/")
     gradlePluginPortal()
   }
 
   resolutionStrategy {
     eachPlugin {
-      if (requested.id.id == "shot") {
-        useModule("com.karumi:shot:5.13.0")
+      if (requested.id.id == "app.cash.paparazzi") {
+        useModule("app.cash.paparazzi:paparazzi-gradle-plugin:1.0.0-SNAPSHOT")
       }
     }
   }
@@ -21,9 +22,6 @@ include(
   ":utils:instrumentation-utils",
   ":utils:kotlin-utils",
   ":utils:flow-test-utils",
-  ":components:chip-layouts",
-  ":components:list",
-  ":components:row",
   ":features:common",
   ":features:home"
 )

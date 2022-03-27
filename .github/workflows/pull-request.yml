@@ -80,6 +80,10 @@ jobs:
         run: ./gradlew testDebugUnitTest
         working-directory: .
 
+      - name: Verify screenshots
+        run: ./gradlew verifyPaparazziDebug
+        working-directory: .
+
       - name: Upload instrumentation test reports
         if: failure()
         uses: actions/upload-artifact@v2
