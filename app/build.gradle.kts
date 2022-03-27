@@ -48,10 +48,6 @@ dependencies {
   implementation(projects.components.chipLayouts)
   implementation(projects.components.row)
   implementation(projects.features.common)
-  implementation(projects.features.bookmarkForm)
-  implementation(projects.features.home)
-  implementation(projects.features.search)
-  implementation(projects.features.settings)
 
   implementation(libs.timber)
 

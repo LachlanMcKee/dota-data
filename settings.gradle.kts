@@ -15,7 +15,7 @@ pluginManagement {
 enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "BookmarkManager"
+rootProject.name = "DotaData"
 include(
   ":app",
   ":utils:instrumentation-utils",
@@ -24,10 +24,6 @@ include(
   ":components:chip-layouts",
   ":components:list",
   ":components:row",
-  ":features:bookmark-form",
-  ":features:common",
-  ":features:home",
-  ":features:search",
-  ":features:settings"
+  ":features:common"
 )
 includeBuild("plugins")

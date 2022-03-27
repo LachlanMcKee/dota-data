@@ -3,8 +3,6 @@ package net.lachlanmckee.bookmark
 import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
@@ -20,11 +18,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.viewmodel.compose.LocalViewModelStoreOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NamedNavArgument
-import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavDeepLink
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHostController
+import androidx.navigation.*
 import com.google.accompanist.navigation.animation.composable
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collectLatest
@@ -92,26 +86,9 @@ fun NavigationComposable(
             closeActivity(context)
           }
         }
-        is Navigation.Bookmark -> {
-          context.startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse(navigation.url))
-          )
-        }
         is Navigation.Home -> navController.navigate("home") {
           launchSingleTop = true
         }
-        is Navigation.Folder -> {
-          navController.navigate("home/folder?folderId=${navigation.folderId}")
-        }
-        is Navigation.Search -> navController.navigate("search") {
-          launchSingleTop = true
-          popUpTo("home")
-        }
-        is Navigation.Settings -> navController.navigate("settings") {
-          launchSingleTop = true
-          popUpTo("home")
-        }
-        is Navigation.AddBookmark -> navController.navigate("bookmark-form")
       }
     }
   }
