@@ -1,6 +1,6 @@
 plugins {
   id("net.lachlanmckee.dota.library")
-  id("shot")
+  id("app.cash.paparazzi")
 }
 
 moduleSetup {
@@ -24,11 +24,9 @@ dependencies {
   implementation(libs.timber)
 
   implementation(projects.features.common)
-  implementation(projects.components.list)
-  implementation(projects.components.row)
-  implementation(projects.components.chipLayouts)
 
   testImplementation(libs.bundles.junitCore)
+  testImplementation(libs.junit.vintage)
   testImplementation(libs.turbine)
   testImplementation(projects.utils.flowTestUtils)
 

@@ -1,7 +1,6 @@
 plugins {
   id("net.lachlanmckee.dota.app")
   id("dagger.hilt.android.plugin")
-  id("shot")
 }
 
 moduleSetup {
@@ -45,8 +44,6 @@ dependencies {
   implementation(libs.bundles.composeNavigation)
   implementation(libs.compose.paging)
 
-  implementation(projects.components.chipLayouts)
-  implementation(projects.components.row)
   implementation(projects.features.common)
   implementation(projects.features.home)
 

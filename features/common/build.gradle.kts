@@ -10,8 +10,6 @@ dependencies {
   implementation(libs.bundles.kotlin)
   implementation(libs.bundles.composeCore)
 
-  implementation(projects.components.row)
-
   implementation(libs.bundles.room)
   kapt(libs.room.compiler)
 

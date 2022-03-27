@@ -1,5 +1,5 @@
 package net.lachlanmckee.dota.testing
 
-import com.karumi.shot.ShotTestRunner
+import androidx.test.runner.AndroidJUnitRunner
 
-open class DotaTestRunner : ShotTestRunner()
+open class DotaTestRunner : AndroidJUnitRunner()

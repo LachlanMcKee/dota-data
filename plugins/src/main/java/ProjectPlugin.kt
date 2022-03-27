@@ -57,7 +57,7 @@ internal abstract class ProjectPlugin : Plugin<Project> {
       correctErrorTypes = true
     }
 
-    tasks.withType(Test::class.java) {
+    tasks.withType(Test::class.java).configureEach {
       useJUnitPlatform()
     }
 
