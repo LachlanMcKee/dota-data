@@ -48,6 +48,7 @@ dependencies {
   implementation(projects.components.chipLayouts)
   implementation(projects.components.row)
   implementation(projects.features.common)
+  implementation(projects.features.home)
 
   implementation(libs.timber)
 

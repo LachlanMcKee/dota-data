@@ -24,6 +24,7 @@ include(
   ":components:chip-layouts",
   ":components:list",
   ":components:row",
-  ":features:common"
+  ":features:common",
+  ":features:home"
 )
 includeBuild("plugins")
