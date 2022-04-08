@@ -86,7 +86,7 @@ jobs:
 
       - name: Upload instrumentation test reports
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: instrumentation-failure-26
           path: '**/build/reports'
@@ -162,7 +162,7 @@ jobs:
 
       - name: Upload instrumentation test reports
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: instrumentation-failure-${{ matrix.api-level }}
           path: |
